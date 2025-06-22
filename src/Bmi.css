@@ -1,0 +1,188 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #83a4d4, #b6fbff); /* Bright, fresh blue gradient */
+    color: #000000; /* Default black text for general elements if not overridden */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Container for the BMI Calculator */
+.bmi-container {
+    background-color: #ffffff; /* Clean white background for the container */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid #e0e0e0; /* Subtle light border */
+}
+
+/* Headings with Rainbow Effect */
+h1 {
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    /* Rainbow text effect */
+    background: linear-gradient(to right,
+        #ff0000, /* Red */
+        #ff7f00, /* Orange */
+        #ffff00, /* Yellow */
+        #00ff00, /* Green */
+        #0000ff, /* Blue */
+        #4b0082, /* Indigo */
+        #9400d3  /* Violet */
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for browsers that don't support text-fill-color */
+}
+
+/* Input Fields */
+input {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px;
+    background-color: #f8f8f8; /* Very light input background */
+    color: #333333; /* Darker text in input */
+    font-size: 1.1em;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+input::placeholder {
+    color: #999999; /* Lighter placeholder text */
+}
+
+/* Labels for inputs */
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    color: #555555; /* Medium grey for labels */
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Button */
+button {
+    background-color: #3498db; /* Bright blue button */
+    color: #ffffff; /* White text on button */
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+    letter-spacing: 0.8px;
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* BMI Result Display with Rainbow Effect */
+.bmi-result {
+    margin-top: 25px;
+    font-size: 1.6em;
+    font-weight: bold;
+    /* Rainbow text effect */
+    background: linear-gradient(to right,
+        #ff0000, /* Red */
+        #ff7f00, /* Orange */
+        #ffff00, /* Yellow */
+        #00ff00, /* Green */
+        #0000ff, /* Blue */
+        #4b0082, /* Indigo */
+        #9400d3  /* Violet */
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback */
+}
+
+/* Styles for BMI categories (Underweight, Normal, Overweight) */
+.bmi-category h1 {
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    /* Rainbow text effect for category heading */
+    background: linear-gradient(to right,
+        #ff0000, /* Red */
+        #ff7f00, /* Orange */
+        #ffff00, /* Yellow */
+        #00ff00, /* Green */
+        #0000ff, /* Blue */
+        #4b0082, /* Indigo */
+        #9400d3  /* Violet */
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback */
+}
+
+/* Specific colors for BMI categories - these will be overridden by the rainbow effect on h1 */
+/* If you want the specific colors to show, you'll need to apply them to a different element within BmiText */
+.bmi-category.underweight h1 {
+    /* This will be overridden by the rainbow gradient above */
+    color: #f39c12; /* Orange for underweight, suggesting attention */
+}
+
+.bmi-category.normal h1 {
+    /* This will be overridden by the rainbow gradient above */
+    color: #27ae60; /* Green for normal, representing good health */
+}
+
+.bmi-category.overweight h1 {
+    /* This will be overridden by the rainbow gradient above */
+    color: #e74c3c; /* Red for overweight, suggesting need for attention */
+}
+
+
+/* Image Styling */
+.bmi-category img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 3px solid #ccc; /* Light border around images */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for images */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .bmi-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 1.1em;
+    }
+
+    .bmi-result {
+        font-size: 1.4em;
+    }
+
+    .bmi-category h1 {
+        font-size: 1.8em;
+    }
+}
